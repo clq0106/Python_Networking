@@ -12,6 +12,9 @@ def print_server_machine_info():
     print ("")
 
 def get_client_machine_info():
+    eingabe_port = input("Geben Sie ihren Port ein")
+    if eingabe_port != int:
+        eingabe_port = input("Geben Sie ihren Port ein")
     remote_host = 'www.amazon.de'                                                          #client-programm#
     ip_address_client = socket.gethostbyname(remote_host)
     packed_ip_address_client = socket.inet_aton(ip_address_client)
@@ -24,4 +27,5 @@ def get_client_machine_info():
         print ("%s: %s" %(remote_host, err_msg))
 if __name__ == '__main__':
     print_server_machine_info()
+
     get_client_machine_info()
